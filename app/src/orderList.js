@@ -10,38 +10,41 @@ class OrderList extends Component {
 
     async componentDidMount() {
 
-        console.log("Component Did Mount");
         this.setState({isLoading: true});
-        const response = await fetch('/json');
-        // const body = await response.json();
-        const text = await response.text();
-        const orders = JSON.parse(text)["orders"];
+        try {
+            const response = await fetch('/json');
+            // const body = await response.json();
+            const text = await response.text();
+            const orders = JSON.parse(text)["orders"];
 
-        const sortedOrders = orders.sort(function (a, b) {
-            // order by descend
-            const d1 = a.date.split("/").join("");
-            const d2 = b.date.split("/").join("");
+            const sortedOrders = orders.sort(function (a, b) {
+                // order by descend
+                const d1 = a.date.split("/").join("");
+                const d2 = b.date.split("/").join("");
 
-            if (d1 > d2) {
-                return -1;  // in order [d1, d2]
-            } else if (d1 < d2) {
-                return 1; // in order [d2, d1]
-            }
+                if (d1 > d2) {
+                    return -1;  // in order [d1, d2]
+                } else if (d1 < d2) {
+                    return 1; // in order [d2, d1]
+                }
 
-            return 0; // keep same order
-        });
+                return 0; // keep same order
+            });
 
-        const inprogressList = sortedOrders.filter(function (order) {
-            return order.status.code === 1 || order.status.code === 2;
-        });
+            const inprogressList = sortedOrders.filter(function (order) {
+                return order.status.code === 1 || order.status.code === 2;
+            });
 
-        const finishedList = orders.filter(function (order) {
-            return order.status.code === 3 || order.status.code === 4;
-        });
+            const finishedList = orders.filter(function (order) {
+                return order.status.code === 3 || order.status.code === 4;
+            });
 
-        this.setState({inprogressOrders: inprogressList});
-        this.setState({finishedOrders: finishedList});
-        this.setState({isLoading: false});
+            this.setState({inprogressOrders: inprogressList});
+            this.setState({finishedOrders: finishedList});
+            this.setState({isLoading: false});
+        } catch(e) {
+            console.log("Oops ...")
+        }
     }
 
     render() {
