@@ -7,7 +7,7 @@ How to run Spring boot MicroService ?
 1. (Windows environment) in root directory, type
 java -jar target\demo.jar 
 
-the service will run at http://localhost:8080/
+  then the service will run at http://localhost:8080/
 
 
 How to run React Web Server ?
@@ -16,12 +16,12 @@ How to run React Web Server ?
 1. (Windows environment) in ./app directory, type
 yarn 
 
-yarn package manage will automatically download necessary packages 
+  yarn package manage will automatically download necessary packages 
 
 2. type 
 yarn start
 
-the server will run at http://localhost:3000/
+  thethe server will run at http://localhost:3000/
 
 
 How to check demo project ?
