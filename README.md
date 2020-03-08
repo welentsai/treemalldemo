@@ -13,7 +13,7 @@
 	- yarn
 - (Windows environment) in ./app directory, type
 	- `yarn` 
-	yarn package manage will automatically download necessary packages 
+	- yarn package manage will automatically download necessary packages 
 - then type
 	- `yarn start` 
 	- the server will run at http://localhost:3000/
@@ -26,3 +26,5 @@ once successfully run SpringBoot Microservice and React Web Server,
 
 - see B2E at
 http://localhost:3000/tinyUrl
+
+![](https://imgur.com/a/u1d1ScY)
