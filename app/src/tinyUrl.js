@@ -15,15 +15,19 @@ class TinyUrl extends Component {
     async onSubmit(e) {
         e.preventDefault();
         const data = new FormData(e.target);
-
-        const response = await fetch('/tinyUrl', {
-            method: 'POST',
-            body: data,
-        });
-
-        const text = await response.text();
-        this.setState({respUrl: text});
-        this.setState({showUrl: true});
+        try {
+            const response = await fetch('/tinyUrl', {
+                method: 'POST',
+                body: data,
+            });
+            const text = await response.text();
+            if(response.status === 200){  // Success
+                this.setState({respUrl: text});
+                this.setState({showUrl: true});
+            }
+        } catch(e) {
+            console.log("Oops ...")
+        }
     }
 
     render() {
