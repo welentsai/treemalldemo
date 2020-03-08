@@ -12,11 +12,11 @@
 	- npm
 	- yarn
 - (Windows environment) in ./app directory, type
-	`yarn` 
-	yarn package manage will automatically download necessary packages 
+	-`yarn` 
+	-yarn package manage will automatically download necessary packages 
 - then type
-	`yarn start` 
-	the server will run at http://localhost:3000/
+	-`yarn start` 
+	-the server will run at http://localhost:3000/
 
 ### How to check demo project ?
 once successfully run SpringBoot Microservice and React Web Server,
