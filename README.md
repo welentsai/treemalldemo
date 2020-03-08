@@ -26,5 +26,3 @@ once successfully run SpringBoot Microservice and React Web Server,
 
 - see B2E at
 http://localhost:3000/tinyUrl
-
-![](https://imgur.com/a/u1d1ScY)
