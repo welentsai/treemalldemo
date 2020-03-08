@@ -21,8 +21,8 @@
 ### How to check demo project ?
 once successfully run SpringBoot Microservice and React Web Server,
 - see F2E at 
-	-http://localhost:3000/
-	-http://localhost:3000/orders
+	- http://localhost:3000/
+	- http://localhost:3000/orders
 
 - see B2E at
-http://localhost:3000/tinyUrl
+	- http://localhost:3000/tinyUrl
